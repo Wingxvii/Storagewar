@@ -1,5 +1,7 @@
 #pragma once
 
+// TODO: We dont need this entire class, remove it all and just use the storage
+
 #include <string>
 #include "object.h"
 

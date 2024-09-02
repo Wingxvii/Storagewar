@@ -30,3 +30,13 @@
 *.exe
 *.out
 *.app
+
+.vs/StorageWar/v17/Browse.VC.db
+
+.vs/StorageWar/v17/Browse.VC.db-shm
+
+.vs/StorageWar/v17/Browse.VC.opendb
+
+*.vsidx
+
+*.ipch

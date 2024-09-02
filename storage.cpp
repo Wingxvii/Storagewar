@@ -11,13 +11,13 @@ Storage::Storage()
 
 Storage::~Storage()
 {
-	for (auto elem : m_nonRefrigeratedContainers)
+	for (auto container : m_nonRefrigeratedContainers)
 	{
-		delete elem;
+		delete container;
 	}
-	for (auto elem : m_refrigeratedContainers)
+	for (auto container : m_refrigeratedContainers)
 	{
-		delete elem;
+		delete container;
 	}
 }
 
@@ -42,13 +42,13 @@ Storage& Storage::operator=(Storage&& other)
 {
 	if (this != &other)
 	{
-		for (auto elem : m_nonRefrigeratedContainers)
+		for (auto container : m_nonRefrigeratedContainers)
 		{
-			delete elem;
+			delete container;
 		}
-		for (auto elem : m_refrigeratedContainers)
+		for (auto container : m_refrigeratedContainers)
 		{
-			delete elem;
+			delete container;
 		}
 
 		std::swap(m_Count, other.m_Count);
@@ -147,13 +147,15 @@ const bool Storage::removeContainer(ContainerID id)
 
 const bool Storage::isObjectInStorage(ObjectID objectID) const
 {
+	// TODO: just find in the array lists instead of doing all this
+
 	auto isInStoragePred = [=](AbstractContainer* container) {
 		if (!container)
 		{
 			return false;
 		}
 		return container->getStoredObjectID() == objectID;
-	};
+		};
 	auto iter = std::find_if(m_nonRefrigeratedContainers.cbegin(), m_nonRefrigeratedContainers.cend(), isInStoragePred);
 	if (iter != m_nonRefrigeratedContainers.cend())
 	{
@@ -197,12 +199,15 @@ const bool Storage::isObjectInStorage(ObjectID objectID) const
 
 Object* const Storage::retrieveObject(ObjectID objectID)
 {
+	// TODO: just find in the array lists instead of doing all this
+
 	Object* retrievedObject = nullptr;
 	if (!isObjectInStorage(objectID))
 	{
 		return retrievedObject;
 	}
 
+	// TODO: ??????
 #define ROFC(C)\
 	for (auto container = C.begin(); container != C.end(); ++container)\
 	{\

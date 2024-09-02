@@ -9,9 +9,11 @@
 #include <stdio.h>
 #include <iostream>
 
-#define NON_REFREGIRATED_CONTAINER_COUNT	16
-#define REFREGIRATED_CONTAINER_COUNT		8
+// TODO: move these to the main function, they arent used anywhere else
+#define NON_REFRIGERATED_CONTAINER_COUNT	16
+#define REFRIGERATED_CONTAINER_COUNT		8
 
+// TODO: Include variable names for clarity
 Storage createStorage(const short&, const short&);
 void generateInitialStorageState(Storage&);
 Object* generateRandomObjectType();
@@ -27,28 +29,38 @@ Object* generateRandomObjectType();
 
 int main()
 {
+	// TODO: use smart pointers for players
 	std::vector<Player*> players;
 
-	for (int i = 0; i < 2; ++i)
+	// TODO: Do we really need a loop to create 2 players?
+	for (int playerNum = 0; playerNum < 2; ++playerNum)
 	{
+		// TODO: remove buffer because it's not needed, name players a better way
 		static char buffer[10];
-		sprintf_s(buffer, "Player%0d", i);
+		sprintf_s(buffer, "Player%0d", playerNum);
+		//TODO: weak pointer
 		Player* player = new Player(buffer);
-		player->m_Storage = createStorage(NON_REFREGIRATED_CONTAINER_COUNT, REFREGIRATED_CONTAINER_COUNT);
-
+		// TODO: Move responsibility for creating the storage to the player
+		player->m_Storage = createStorage(NON_REFRIGERATED_CONTAINER_COUNT, REFRIGERATED_CONTAINER_COUNT);
+		// TODO: This does nothing, so we should remove it
 		generateInitialStorageState(player->m_Storage);
 
 		players.push_back(player);
 	}
+	//TODO: Validate players
 
 	bool isGameRunning = true;
+	// TODO: We dont need this since we have a player array list
 	int playerIndex = 0;
+	// TODO: either make all player indexes unsigned or make this -1
 	int winningPlayerIndex = 0xFFFFFFFF;
 	do
 	{
+		// TODO: we dont need to loop through player turns, since we already have a do while loop
 		// Each players play in turn
 		for (playerIndex = 0; playerIndex < 2; ++playerIndex)
 		{
+			// TODO: Use modulus instead to loop the player array list
 			// find opponent player index
 			int opponentIndex = playerIndex + 1;
 			if (opponentIndex >= players.size())
@@ -56,56 +68,72 @@ int main()
 				opponentIndex = 0;
 			}
 
-			Player* p = players[playerIndex];
-			std::printf("%s to play\n", p->m_Name.c_str());
+			//TODO: weak pointer
+			Player* currentPlayer = players[playerIndex];
+			//TODO: since name is always converted to cstr, we should just store it as a cstr. We dont need to compare or resize, cstr is good enough
+			std::printf("%s to play\n", currentPlayer->m_Name.c_str());
 
 			// spawn random object
+			// TODO: make this a smart pointer also
 			Object* object = generateRandomObjectType();
+			//TODO: store type as cstr also
 			std::printf("%s spawned\n", object->getType().c_str());
 
+			// TODO: we dont need these brackets
 			// player handle new object
 			{
-				ObjectID objecID = p->storeObject(object);
-				if (objecID == INVALID_OBJECT_ID)
+				// TODO: player should not be responsible for giving objectID, we should just get this from the object itself
+				ObjectID objectID = currentPlayer->storeObject(object);
+				// TODO: Check the return of store object instead of this
+				if (objectID == INVALID_OBJECT_ID)
 				{
-					std::printf("%s was not able to store %s\n", p->m_Name.c_str(), object->getType().c_str());
+					std::printf("%s was not able to store %s\n", currentPlayer->m_Name.c_str(), object->getType().c_str());
 					winningPlayerIndex = opponentIndex;
 					isGameRunning = false;
+					// TODO: dont need to break, since we'll have 1 player per turn
 					break;
 				}
 				else
 				{
-					std::printf("%s successfully stored the object.\n", p->m_Name.c_str());
+					std::printf("%s successfully stored the object.\n", currentPlayer->m_Name.c_str());
 				}
 			}
 
 			// player pick object
-			Object* objetToSend = nullptr;
-			std::printf("%s: Pick an object by ObjectID to send to your opponent\n", p->m_Name.c_str());
+			// TODO: weak pointer
+			Object* objectToSend = nullptr;
+			std::printf("%s: Pick an object by ObjectID to send to your opponent\n", currentPlayer->m_Name.c_str());
 			do {
-				p->displayStorage();
+				currentPlayer->displayStorage();
 				ObjectID idToRetrieve;
 				printf("Enter a valid ObjectID: ");
 				std::cin >> idToRetrieve;
-				Object* const retrievedObject = p->retrieveObject(idToRetrieve);
+
+				//TODO: weak pointer
+				Object* const retrievedObject = currentPlayer->retrieveObject(idToRetrieve);
+				// TODO: check if this is a nullptr for clarity
 				if (!retrievedObject) {
 					std::printf("Invalid ObjectID %s. Please try again.\n", idToRetrieve.c_str());
 				}
 				else
 				{
-					objetToSend = retrievedObject;
+					objectToSend = retrievedObject;
 				}
-			} while (!objetToSend);
+				// TODO: check if this is a nullptr for clarity
+			} while (!objectToSend);
 
 			// player send new object to opponent
 			Player* opponent = players[opponentIndex];
+			// TODO: dont need these brackets
 			{
-				ObjectID objecID = opponent->storeObject(objetToSend);
-				if (objecID == INVALID_OBJECT_ID)
+				// TODO: check function return bool instead of invalid_object_id
+				ObjectID objectID = opponent->storeObject(objectToSend);
+				if (objectID == INVALID_OBJECT_ID)
 				{
-					std::printf("%s was not able to store %s\n", opponent->m_Name.c_str(), objetToSend->getType().c_str());
+					std::printf("%s was not able to store %s\n", opponent->m_Name.c_str(), objectToSend->getType().c_str());
 					isGameRunning = false;
 					winningPlayerIndex = playerIndex;
+					// TODO: dont need to break
 					break;
 				}
 				else
@@ -117,37 +145,45 @@ int main()
 			std::printf("\n-------------------------\nEnd of turn\n-------------------------\n");
 		}
 	} while (isGameRunning);
+
+	// TODO: move validation to before the game ends
 	assert(winningPlayerIndex != 0xFFFFFFFF);
 
 	std::printf("%s won the game!\n", players[winningPlayerIndex]->m_Name.c_str());
 
+	// TODO: We dont need this since we have smart pointers
 	for (auto player : players)
 	{
 		delete player;
 	}
 }
 
+// TODO: these dont need to be reference
 Storage createStorage(const short& nonRefrigeratedContainerCount, const short& refrigeratedContainerCount)
 {
-	Storage s;
+	// TODO: smart pointer
+	Storage createdStorage;
 
-	s.setMaxContainerCount(CT_NonRefrigerated, nonRefrigeratedContainerCount);
+	createdStorage.setMaxContainerCount(CT_NonRefrigerated, nonRefrigeratedContainerCount);
 
+	//TODO: Get rid of this for loop, since setMaxContainerCount will replace it
 	for (int i = 0; i < nonRefrigeratedContainerCount; i++)
 	{
-		s.addContainer(CT_NonRefrigerated);
+		createdStorage.addContainer(CT_NonRefrigerated);
 	}
 
-	s.setMaxContainerCount(CT_Refrigerated, refrigeratedContainerCount);
+	createdStorage.setMaxContainerCount(CT_Refrigerated, refrigeratedContainerCount);
 
+	//TODO: Get rid of this for loop, since setMaxContainerCount will replace it
 	for (int i = 0; i < refrigeratedContainerCount; i++)
 	{
-		s.addContainer(CT_Refrigerated);
+		createdStorage.addContainer(CT_Refrigerated);
 	}
 
-	return s;
+	return createdStorage;
 }
 
+// TODO: Get rid of this
 void generateInitialStorageState(Storage& s)
 {
 
@@ -165,6 +201,8 @@ Object* generateRandomObjectType()
 	const int randomNumber = uniformDist(engine);
 
 	Object* randomObject = nullptr;
+
+	//TODO: validate results first, then index object types instead of using a switch statement
 	switch (randomNumber)
 	{
 	case 0:

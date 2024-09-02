@@ -5,6 +5,7 @@
 ObjectID Player::storeObject(Object* object)
 {
 	assert(object);
+	// TODO: Return the results of the storage attempt, rather than the id
 	return m_Storage.storeObject(object);
 }
 
