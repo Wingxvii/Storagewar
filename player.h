@@ -1,7 +1,7 @@
 #pragma once
 
-#include "storage.h"
 #include "object.h"
+#include "storage.h"
 
 #include <memory>
 

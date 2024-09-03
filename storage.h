@@ -2,11 +2,8 @@
 
 #include "container.h"
 #include "object.h"
-#include <list>
-#include <map>
+
 #include <memory>
-#include <string>
-#include <utility>
 #include <vector>
 
 using namespace StorageWarTypes;

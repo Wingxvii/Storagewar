@@ -2,10 +2,8 @@
 #include "player.h"
 
 #include <assert.h>
-#include <list>
-#include <random>
-#include <stdio.h>
 #include <iostream>
+#include <random>
 
 std::shared_ptr<Object> generateRandomObject();
 

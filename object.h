@@ -1,7 +1,5 @@
 #pragma once
 
-#include <string>
-
 namespace StorageWarTypes
 {
 	enum class EObjectType : int
