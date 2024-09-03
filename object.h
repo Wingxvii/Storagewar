@@ -1,5 +1,9 @@
 #pragma once
 
+#include <map>
+#include <string>
+#include <utility>
+
 namespace StorageWarTypes
 {
 	// Enum describes the type of object
@@ -50,5 +54,10 @@ protected:
 	EObjectType m_Type = EObjectType::None;
 
 private:
+	// Gather our object types from a data table
+	static void SetupObjectData();
+	static bool m_objectTableSetup;
+	static std::map<int, std::pair<std::string, bool>> m_objectData;
+
 	static int m_Count;
 };
