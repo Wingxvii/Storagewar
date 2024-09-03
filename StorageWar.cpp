@@ -18,6 +18,7 @@ std::shared_ptr<Object> generateRandomObject();
 
 int main()
 {
+	// Setup maximum storage counts
 	const int refrigeratedContainerCount = 8;
 	const int nonRefrigeratedContainerCount = 16;
 
@@ -38,7 +39,6 @@ int main()
 	{
 		// find opponent player index
 		int nextPlayerIndex = (currentPlayerIndex + 1) % players.size();
-
 		std::shared_ptr<Player> currentPlayer = players[currentPlayerIndex];
 		std::printf("%s to play\n", currentPlayer->getName());
 
@@ -56,29 +56,32 @@ int main()
 			std::printf("%s was not able to store %s\n", currentPlayer->getName(), randomObject->getName());
 			winningPlayerIndex = nextPlayerIndex;
 			isGameRunning = false;
+			// We dont need to do the next part if the game has been won
 			break;
 		}
 
 		// player pick object
 		std::shared_ptr<Object> objectToSend = nullptr;
 		std::printf("%s: Pick an object by ObjectID to send to your opponent\n", currentPlayer->getName());
-		do {
+		do 
+		{
 			currentPlayer->printStorage();
 			int idToRetrieve;
 			printf("Enter a valid ObjectID: ");
 			std::cin >> idToRetrieve;
 
+			// Validate the input is an int
 			if (std::cin.fail())
 			{
 				printf("Invalid character entered, please enter a number.\n");
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-
 			}
 			else
 			{
 				objectToSend = currentPlayer->retrieveObject(idToRetrieve);
-				if (objectToSend.get() == nullptr) {
+				if (objectToSend.get() == nullptr) 
+				{
 					std::printf("Invalid ObjectID %i. Please try again.\n", idToRetrieve);
 				}
 			}
@@ -99,6 +102,7 @@ int main()
 		// player end of turn
 		std::printf("\n-------------------------\nEnd of turn\n-------------------------\n");
 
+		// Change to other player's turn
 		currentPlayerIndex = nextPlayerIndex;
 	} while (isGameRunning);
 

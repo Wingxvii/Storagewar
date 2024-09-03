@@ -2,6 +2,7 @@
 
 namespace StorageWarTypes
 {
+	// Enum describes the type of object
 	enum class EObjectType : int
 	{
 		None,
@@ -14,6 +15,7 @@ namespace StorageWarTypes
 		MAX
 	};
 
+	// Enum describles the type of container
 	enum class EContainerType : int
 	{
 		Refrigerated,
@@ -24,16 +26,23 @@ namespace StorageWarTypes
 
 using namespace StorageWarTypes;
 
+// Class representing an object which can be stored
 class Object
 {
 public:
 	Object();
 	Object(EObjectType type);
 
+	// Returns the object type
 	const EObjectType getType() const;
+
+	// Returns the type of the object as a char array
 	const char* getName() const;
+
+	// Returns the unique id of the object
 	const int getID() const;
 
+	// If the object requires refigeration
 	const bool isRefrigerated() const;
 
 protected:

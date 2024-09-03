@@ -3,14 +3,6 @@
 #include <algorithm>
 #include <assert.h>
 
-Storage::Storage()
-{
-}
-
-Storage::~Storage()
-{
-}
-
 void Storage::setMaxContainerCount(EContainerType type, int count)
 {
 	assert(count >= 0);
