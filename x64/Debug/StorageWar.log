@@ -1,7 +1,2 @@
-﻿  container.cpp
-  object.cpp
-  player.cpp
-  storage.cpp
-  StorageWar.cpp
-  Generating Code...
-  StorageWar.vcxproj -> C:\Users\turnt\OneDrive\Documents\C++\Haven\x64\Debug\StorageWar.exe
+﻿  StorageWar.cpp
+  StorageWar.vcxproj -> C:\Users\turnt\OneDrive\Documents\C++\Storagewar\x64\Debug\StorageWar.exe

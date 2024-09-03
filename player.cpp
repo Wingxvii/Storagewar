@@ -2,24 +2,35 @@
 
 #include "assert.h"
 
-ObjectID Player::storeObject(Object* object)
+Player::Player(const char* name) : m_Name(name)
+{
+}
+
+bool Player::storeObject(std::shared_ptr<Object> object)
 {
 	assert(object);
-	// TODO: Return the results of the storage attempt, rather than the id
-	return m_Storage.storeObject(object);
+	return m_Storage->storeObject(object);
 }
 
-Object* const Player::retrieveObject(ObjectID objectID)
+void Player::CreateInitialStorage(int refridgeratedCount, int nonRefridgeratedCount)
 {
-	if (objectID == INVALID_OBJECT_ID)
-	{
-		return nullptr;
-	}
-
-	return m_Storage.retrieveObject(objectID);
+	m_Storage = std::make_unique<Storage>();
+	m_Storage->setMaxContainerCount(EContainerType::Refrigerated, refridgeratedCount);
+	m_Storage->setMaxContainerCount(EContainerType::NonRefrigerated, nonRefridgeratedCount);
 }
 
-void Player::displayStorage() const
+std::shared_ptr<Object> const Player::retrieveObject(int objectID)
 {
-	m_Storage.displayContainer();
+	assert(objectID >= 0);
+	return m_Storage->retrieveObjectByID(objectID);
+}
+
+void Player::printStorage() const
+{
+	m_Storage->printContents();
+}
+
+const char* Player::getName() const
+{
+	return m_Name;
 }

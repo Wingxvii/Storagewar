@@ -1,7 +1,7 @@
 #pragma once
 
 // TODO: We dont need this entire class, remove it all and just use the storage
-
+/*
 #include <string>
 #include "object.h"
 
@@ -9,12 +9,6 @@ using ContainerType = std::string;
 using ContainerID = std::string;
 static const ContainerID INVALID_CONTAINER_ID = "INVALID_OBJECT_ID";
 
-enum class EContainerType : char
-{
-	Refrigerated,
-	NonRefrigerated,
-	MAX
-};
 
 static std::string ContainerTypes[(char)(EContainerType::MAX)] = {
 	"Refrigerated",
@@ -88,3 +82,4 @@ public:
 
 	virtual const ContainerType getType() const override;
 };
+*/

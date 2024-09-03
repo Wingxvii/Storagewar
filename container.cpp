@@ -1,3 +1,4 @@
+/*
 #include "container.h"
 
 int AbstractContainer::m_containerCounter = 0;
@@ -71,3 +72,4 @@ const ContainerType NonRefrigeratedContainer::getType() const
 {
 	return CT_NonRefrigerated;
 }
+*/
