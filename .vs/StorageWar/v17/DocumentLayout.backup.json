@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\objectTypes.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:objectTypes.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\storage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:storage.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\storage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:storage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\StorageWar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:StorageWar.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:object.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\storage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:storage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:object.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\objectTypes.csv||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B9EA842C-B8C4-4FB2-AA3E-EDE348BB83CD}|StorageWar.vcxproj|solutionrelative:objectTypes.csv||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "objectTypes.csv",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\objectTypes.csv",
               "RelativeDocumentMoniker": "objectTypes.csv",
@@ -59,91 +59,91 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "storage.h",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\storage.h",
               "RelativeDocumentMoniker": "storage.h",
               "ToolTip": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\storage.h",
               "RelativeToolTip": "storage.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABEAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-01T05:09:18.288Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "storage.cpp",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\storage.cpp",
               "RelativeDocumentMoniker": "storage.cpp",
               "ToolTip": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\storage.cpp",
               "RelativeToolTip": "storage.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-01T05:08:59.494Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
               "Title": "player.h",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\player.h",
               "RelativeDocumentMoniker": "player.h",
               "ToolTip": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\player.h",
               "RelativeToolTip": "player.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAABEAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-01T05:09:21.958Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "player.cpp",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\player.cpp",
               "RelativeDocumentMoniker": "player.cpp",
               "ToolTip": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\player.cpp",
               "RelativeToolTip": "player.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-01T05:09:08.488Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "object.h",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.h",
               "RelativeDocumentMoniker": "object.h",
               "ToolTip": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.h",
               "RelativeToolTip": "object.h",
-              "ViewState": "AgIAADAAAAAAAAAAAAAAADsAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAACMAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-09-01T05:09:24.39Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "object.cpp",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.cpp",
               "RelativeDocumentMoniker": "object.cpp",
               "ToolTip": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\object.cpp",
               "RelativeToolTip": "object.cpp",
-              "ViewState": "AgIAAD8AAAAAAAAAAAAAAFMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAewFwAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-01T05:09:12.041Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "StorageWar.cpp",
               "DocumentMoniker": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\StorageWar.cpp",
               "RelativeDocumentMoniker": "StorageWar.cpp",
               "ToolTip": "C:\\Users\\turnt\\OneDrive\\Documents\\C\u002B\u002B\\Storagewar\\StorageWar.cpp",
               "RelativeToolTip": "StorageWar.cpp",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAHcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAewBYAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-09-01T05:08:48.647Z",
               "EditorCaption": ""

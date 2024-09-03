@@ -3,9 +3,11 @@
 #include <algorithm>
 #include <assert.h>
 
+using namespace StorageWarTypes;
+
 void Storage::setMaxContainerCount(EContainerType type, int count)
 {
-	assert(count >= 0);
+	assert(count >= 0 && "Storage::setMaxContainerCount: count is less than 0");
 
 	if (type == EContainerType::Refrigerated)
 	{
@@ -18,9 +20,9 @@ void Storage::setMaxContainerCount(EContainerType type, int count)
 }
 
 
-const bool Storage::storeObject(std::shared_ptr<Object> object)
+bool Storage::storeObject(const std::shared_ptr<Object>& object)
 {
-	assert(object.get());
+	assert(object.get() && "Storage::storeObject: object is invalid");
 
 	if (object->isRefrigerated() && m_refrigeratedContainer.size() < m_maxRefrigeratedContainerSize)
 	{
@@ -36,7 +38,7 @@ const bool Storage::storeObject(std::shared_ptr<Object> object)
 	return false;
 }
 
-std::shared_ptr<Object> const Storage::retrieveObjectByID(int objectID)
+std::shared_ptr<Object> Storage::retrieveObjectByID(int objectID)
 {
 	std::shared_ptr<Object> foundObject = nullptr;
 
@@ -67,11 +69,11 @@ void Storage::printContents() const
 {
 	std::printf("Display the content the storage\n");
 	std::printf("	Refrigerated content:\n");
-	for (auto object : m_refrigeratedContainer) {
+	for (const auto& object : m_refrigeratedContainer) {
 		printf("	ObjectID: %i \t\t %s\n", object->getID(), object->getName());
 	}
 	std::printf("\n	NonRefrigerated content:\n");
-	for (auto object : m_nonRefrigeratedContainer) {
+	for (const auto& object : m_nonRefrigeratedContainer) {
 		printf("	ObjectID: %i \t\t %s\n", object->getID(), object->getName());
 	}
 	std::printf("-----------\n");

@@ -4,7 +4,8 @@
 
 #include <fstream>
 #include <sstream>
-#include <string>
+
+using namespace StorageWarTypes;
 
 int Object::m_Count = 0;
 bool Object::m_objectTableSetup = false;
@@ -28,34 +29,34 @@ Object::Object(EObjectType type) : m_Type(type)
 	}
 }
 
-const EObjectType Object::getType() const
+EObjectType Object::getType() const
 {
 	return m_Type;
 }
 
 const char* Object::getName() const
 {
-	assert(m_objectData.size() > 0);
+	assert(m_objectData.size() > 0 && "Object::getName: Object data has not been setup");
 
-	std::map<int, std::pair<std::string, bool>>::iterator mapIterator = m_objectData.find((int)m_Type);
+	auto mapIterator = m_objectData.find((int)m_Type);
 
-	assert(mapIterator != m_objectData.end());
+	assert(mapIterator != m_objectData.end() && "Object::getName: Object type not found from parsed data file");
 
 	return mapIterator->second.first.c_str();
 }
 
-const int Object::getID() const
+int Object::getID() const
 {
 	return m_ObjectID;
 }
 
-const bool Object::isRefrigerated() const
+bool Object::isRefrigerated() const
 {
-	assert(m_objectData.size() > 0);
+	assert(m_objectData.size() > 0 && "Object::isRefrigerated: Object data has not been setup");
 
-	std::map<int, std::pair<std::string, bool>>::iterator mapIterator = m_objectData.find((int)m_Type);
+	auto mapIterator = m_objectData.find((int)m_Type);
 
-	assert(mapIterator != m_objectData.end());
+	assert(mapIterator != m_objectData.end() && "Object::isRefrigerated: Object type not found from parsed data file");
 
 	return mapIterator->second.second;
 }
@@ -63,7 +64,6 @@ const bool Object::isRefrigerated() const
 void Object::SetupObjectData()
 {
 	std::ifstream file("objectTypes.csv");
-	std::string line;
 
 	if (!file.is_open())
 	{
@@ -71,6 +71,7 @@ void Object::SetupObjectData()
 		return;
 	}
 
+	std::string line;
 	while (std::getline(file, line))
 	{
 		std::istringstream ss(line);
@@ -89,9 +90,7 @@ void Object::SetupObjectData()
 		std::getline(ss, entry, ',');
 		isRefrigerated = (entry == "1");
 
-		std::pair<std::string, bool> nameRefrigeratedPair = std::make_pair(name, isRefrigerated);
-
-		m_objectData.emplace(typeIndex, nameRefrigeratedPair);
+		m_objectData.emplace(typeIndex, std::make_pair(name, isRefrigerated));
 	}
 	file.close();
 

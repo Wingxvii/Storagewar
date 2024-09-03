@@ -23,13 +23,12 @@ int main()
 	const int nonRefrigeratedContainerCount = 16;
 
 	std::vector<std::shared_ptr<Player>> players;
-
 	players.push_back(std::make_shared<Player>("Player1"));
 	players.push_back(std::make_shared<Player>("Player2"));
 
-	for (std::shared_ptr<Player> player : players)
+	for (const std::shared_ptr<Player>& player : players)
 	{
-		player->CreateInitialStorage(refrigeratedContainerCount, nonRefrigeratedContainerCount);
+		player->createInitialStorage(refrigeratedContainerCount, nonRefrigeratedContainerCount);
 	}
 
 	bool isGameRunning = true;
@@ -38,8 +37,8 @@ int main()
 	do
 	{
 		// find opponent player index
-		int nextPlayerIndex = (currentPlayerIndex + 1) % players.size();
-		std::shared_ptr<Player> currentPlayer = players[currentPlayerIndex];
+		const int nextPlayerIndex = (currentPlayerIndex + 1) % players.size();
+		const std::shared_ptr<Player>& currentPlayer = players[currentPlayerIndex];
 		std::printf("%s to play\n", currentPlayer->getName());
 
 		// spawn random object
@@ -67,13 +66,13 @@ int main()
 		{
 			currentPlayer->printStorage();
 			int idToRetrieve;
-			printf("Enter a valid ObjectID: ");
+			std::printf("Enter a valid ObjectID: ");
 			std::cin >> idToRetrieve;
 
 			// Validate the input is an int
 			if (std::cin.fail())
 			{
-				printf("Invalid character entered, please enter a number.\n");
+				std::printf("Invalid character entered, please enter a number.\n");
 				std::cin.clear();
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 			}
@@ -88,7 +87,7 @@ int main()
 		} while (!objectToSend);
 
 		// player send new object to opponent
-		std::shared_ptr<Player> opponent = players[nextPlayerIndex];
+		const std::shared_ptr<Player>& opponent = players[nextPlayerIndex];
 		if (opponent->storeObject(objectToSend))
 		{
 			std::printf("%s successfully stored the object.\n", opponent->getName());
@@ -116,12 +115,12 @@ std::shared_ptr<Object> generateRandomObject()
 
 	// Choose a random number between 1 and 6
 	std::default_random_engine engine(device());
-	std::uniform_int_distribution<int> uniformDist(1, static_cast<int>(EObjectType::MAX) - 1);
+	std::uniform_int_distribution<int> uniformDist(1, static_cast<int>(StorageWarTypes::EObjectType::MAX) - 1);
 
 	const int randomNumber = uniformDist(engine);
 
-	std::shared_ptr<Object> randomObject = std::make_shared<Object>(static_cast<EObjectType>(randomNumber));
+	std::shared_ptr<Object> randomObject = std::make_shared<Object>(static_cast<StorageWarTypes::EObjectType>(randomNumber));
 
-	assert(randomObject.get());
+	assert(randomObject.get() && "Main::generateRandomObject random object is invalid");
 	return randomObject;
 }

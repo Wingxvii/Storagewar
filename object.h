@@ -28,34 +28,33 @@ namespace StorageWarTypes
 	};
 }
 
-using namespace StorageWarTypes;
-
 // Class representing an object which can be stored
 class Object
 {
 public:
 	Object();
-	Object(EObjectType type);
+	explicit Object(StorageWarTypes::EObjectType type);
 
 	// Returns the object type
-	const EObjectType getType() const;
+	StorageWarTypes::EObjectType getType() const;
 
 	// Returns the type of the object as a char array
 	const char* getName() const;
 
 	// Returns the unique id of the object
-	const int getID() const;
+	int getID() const;
 
 	// If the object requires refigeration
-	const bool isRefrigerated() const;
+	bool isRefrigerated() const;
 
 protected:
 	int m_ObjectID = -1;
-	EObjectType m_Type = EObjectType::None;
+	StorageWarTypes::EObjectType m_Type = StorageWarTypes::EObjectType::None;
 
 private:
 	// Gather our object types from a data table
 	static void SetupObjectData();
+
 	static bool m_objectTableSetup;
 	static std::map<int, std::pair<std::string, bool>> m_objectData;
 
