@@ -1,4 +1,3 @@
-#include "container.h"
 #include "player.h"
 
 #include <assert.h>
